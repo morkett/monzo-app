@@ -1,0 +1,23 @@
+<%
+if(typeof includes !== 'undefined') {
+  includes.forEach(function(vendor){
+    if(vendor.css){
+      %>
+      <link href="/vendor/<%=vendor.title+'/'+vendor.css%>" rel="stylesheet">
+      <%
+    }
+  });
+}
+%>
+
+<%
+if(typeof publicIncludes !== 'undefined') {
+  publicIncludes.forEach(function(css){
+    if(css.css){
+      %>
+      <link href="/css/<%=css.title+'/'+css.css%>" rel="stylesheet">
+      <%
+    }
+  });
+}
+%>

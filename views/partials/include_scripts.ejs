@@ -1,0 +1,23 @@
+<%
+if(typeof includes !== 'undefined') {
+  includes.forEach(function(vendor){
+    if(vendor.js){
+      %>
+      <script src="/vendor/<%=vendor.title+'/'+vendor.js%>"></script>
+      <%
+    }
+  });
+}
+%>
+
+<%
+if(typeof publicIncludes !== 'undefined') {
+  publicIncludes.forEach(function(script){
+    if(script.js){
+      %>
+      <script src="/js/<%=script.title+'/'+script.js%>"></script>
+      <%
+    }
+  });
+}
+%>

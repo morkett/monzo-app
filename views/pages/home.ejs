@@ -1,0 +1,27 @@
+<h2>Choose your Account</h2>
+
+<div class="d-flex justify-content-center">
+
+  <% for (var key in  accounts) {
+    for (var i = 0; i < accounts[key].length; i++) { %>
+
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1510253782297-404c4da27214?auto=format&fit=crop&w=1351&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title"><%= accounts[key][i].type.replace("_", " ").toUpperCase() %></h4>
+          <p class="card-text">
+            <%= accounts[key][i].description %></strong>
+          </p>
+          <a href="/account/<%= accounts[key][i].id %>" class="btn btn-primary">To Account <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <% }
+    } %>
+  </div>
+
+
+
+  <script type="text/javascript">
+  var accounts = <%- JSON.stringify(accounts) %>
+  console.log(accounts);
+</script>
